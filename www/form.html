@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Glassmorphism login Form Tutorial in html css</title>
+    <link rel="stylesheet" href="form.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    {% if not disable_user_pass_login or (ldap_settings and ldap_settings.enabled) %}
+    <form id="loginForm">
+        <h3>Login Here</h3>
+
+        <label for="username">Username</label>
+       
+        <input type="text" id="login_email" class="form-control"
+				placeholder="{% if login_name_placeholder %}{{ login_name_placeholder  }}{% else %}{{ _('jane@example.com') }}{% endif %}"
+				required autofocus autocomplete="username">
+
+        <label for="password">Password</label>
+     
+        <input type="password" id="login_password" class="form-control" placeholder="•••••"
+				autocomplete="current-password" required>
+
+        {% endif %}
+        <button type="submit">  {{ _("Send login link") }}</button>
+        <div class="social">
+            <div class="go"><i class="fab fa-google"></i>  Google</div>
+            <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+        </div>
+    </form>
+    <script src="form.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</body>
+</html> 

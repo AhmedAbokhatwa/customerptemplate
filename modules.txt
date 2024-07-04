@@ -1,0 +1,2 @@
+custom app for pos
+custom_report
